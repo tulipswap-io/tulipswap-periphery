@@ -47,13 +47,13 @@ The code below shows how the contract should look. The `tulip_factory` should al
 Once all the required values are filled in run the command `node deployer.js`
 this will deploy your Router02 and WOETH contracts and fill in the addresses they were deployed at in the `tulip_router_02` and `woeth` keys.
 
-# Oasis Testnet Addresses
+# Oasis Paratime Addresses
 
-Deployer Address: `0xc5e3B9C6E6d79330765d240eb12f3BB7A5215592`
-FeeTo Address: `0xc5e3B9C6E6d79330765d240eb12f3BB7A5215592`
-TulipFactory Address: `0xca6bd53Ae0c4e288f3826270c32121bF87ab129d`
-WOETH Address: `0x7e71246E2e4202695c1CeA33C69B3888290bb1Ae`
-TulipRouter02 Address: `0x572076689102994AD273B448129b4725800B6267`
+Deployer Address: `0xC02656186C435D960E719d7D53ECF92b3ecdCB87`
+FeeTo Address: `0xC02656186C435D960E719d7D53ECF92b3ecdCB87`
+TulipFactory Address: `0xD2749DB505d3C35CC004F018A503AA24b5087144`
+WOETH Address: `0xC088AeA3EBd1e30F3F39FC9B0d2B67FabC59506A`
+TulipRouter02 Address: `0xdF38DA2918F5f0C8bbd138c697a8fAE2e3D645af`
 
 [Oasis ETH (OETH) faucet on MainNet Beta](http://faucet.oasiseth.org/)
 [scan.oasiseth.org](http://scan.oasiseth.org/)
