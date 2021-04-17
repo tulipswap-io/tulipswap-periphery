@@ -29,10 +29,6 @@ function write_data(_message) {
 
 var privateKeys = [];
 var URL = "";
-const erc20_address_1 = '0x62Cb73759421E02a4FF6C91C38dd3279460f94ee';
-const erc20_address_2 = '0xac2b29B58A2d76706CDA409b4cfa3c893D3A265F';
-const approvalAmount = "999900999999999999999";
-
 
 (async () => {
   // Read in the configuration information
@@ -82,42 +78,42 @@ const approvalAmount = "999900999999999999999";
   console.log(`\nTulipRouter02 contract deployed at ${tulipRouter02.options.address}`);
   console.log(`Please store this router address for future use ^^^`);
 
-  data_object.contract_address.tulip_router_02 = tulipRouter02.options.address;
+  // data_object.contract_address.tulip_router_02 = tulipRouter02.options.address;
   
-  let erc20_1 = await new web3.eth.Contract(IERC20.abi,erc20_address_1)
-  let erc20_2 = await new web3.eth.Contract(IERC20.abi,erc20_address_2)
+  // let erc20_1 = await new web3.eth.Contract(IERC20.abi,erc20_address_1)
+  // let erc20_2 = await new web3.eth.Contract(IERC20.abi,erc20_address_2)
   
-  console.log("started approval 1");
+  // console.log("Started approval on erc20 1");
 
-  // var approvalAmount = web3.utils.toWei(999,'ether');
-  await erc20_1.methods.approve(data_object.contract_address.tulip_router_02,approvalAmount).send({from: accounts[0]});
+  // // var approvalAmount = web3.utils.toWei(999,'ether');
+  // await erc20_1.methods.approve(data_object.contract_address.tulip_router_02,approvalAmount).send({from: accounts[0]});
   
-  console.log("started approval 2");
+  // console.log("Started approval on erc20 2");
 
-  await erc20_2.methods.approve(data_object.contract_address.tulip_router_02,approvalAmount).send({from: accounts[0]});
-
-
-  const allowance1 = await erc20_1.methods.allowance(accounts[0],data_object.contract_address.tulip_router_02).call();
-  const allowance2 = await erc20_2.methods.allowance(accounts[0],data_object.contract_address.tulip_router_02).call();
-  const bal1 = await erc20_1.methods.balanceOf(accounts[0]).call();
-  const bal2 = await erc20_2.methods.balanceOf(accounts[0]).call();
-
-  console.log("allowances");
-  console.log(allowance1);
-  console.log(allowance2);
-  console.log("balances");
-  console.log(bal1);
-  console.log(bal2);
+  // await erc20_2.methods.approve(data_object.contract_address.tulip_router_02,approvalAmount).send({from: accounts[0]});
 
 
+  // const allowance1 = await erc20_1.methods.allowance(accounts[0],data_object.contract_address.tulip_router_02).call();
+  // const allowance2 = await erc20_2.methods.allowance(accounts[0],data_object.contract_address.tulip_router_02).call();
+  // const bal1 = await erc20_1.methods.balanceOf(accounts[0]).call();
+  // const bal2 = await erc20_2.methods.balanceOf(accounts[0]).call();
 
-  //let tulip_factory = await new web3.eth.Contract(ITulipFactory.abi,data_object.contract_address.tulip_factory)
-  //await tulip_factory.methods.createPair(erc20_address_1,erc20_address_2).send({from: accounts[0]});
-  console.log("started add liq");
+  // console.log("Allowances");
+  // console.log(allowance1);
+  // console.log(allowance2);
+  // console.log("Balances");
+  // console.log(bal1);
+  // console.log(bal2);
 
-  await tulipRouter02.methods.addLiquidity(erc20_address_1,erc20_address_2, 100000, 100000, 0, 0, accounts[0], 1699992120).send({from: accounts[0]});
+
+
+  // //let tulip_factory = await new web3.eth.Contract(ITulipFactory.abi,data_object.contract_address.tulip_factory)
+  // //await tulip_factory.methods.createPair(erc20_address_1,erc20_address_2).send({from: accounts[0]});
+  // console.log("Started add liq");
+
+  // await tulipRouter02.methods.addLiquidity(erc20_address_1,erc20_address_2, 100000, 100000, 0, 0, accounts[0], 1699992120).send({from: accounts[0]});
   
-  console.log("finished add liq");
+  // console.log("Finished add liq");
   
   let data_to_write = JSON.stringify(data_object, null, 2);
 
