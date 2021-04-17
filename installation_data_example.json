@@ -1,0 +1,17 @@
+{
+  "private_key": {
+    "alice": ""
+  },
+  "public_key": {
+    "alice": ""
+  },
+  "contract_address": {
+    "tulip_factory": "",
+    "woeth": "",
+    "tulip_router_02": ""
+  },
+  "provider": {
+    "rpc_endpoint": "http://127.0.0.1:8545"
+  }
+}
+
